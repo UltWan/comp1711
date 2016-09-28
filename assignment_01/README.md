@@ -1,7 +1,12 @@
 Assignment 1 README
 
-You should complete assignment 1 in the timetable.c file.
+All work is in the timetable.c file, it can be opened and viewed in any text editor.
 
-Ensure you read the instructions carefully and please ask any questions you may have in the lab classes.
+In order to run the file it must first be complied, to do this on Linux, enter the following command into the terminal:
+	gcc -c -o timetable.o timetable.c
 
-With all assignments you should submit a readme file. The readme file should contain any information that you wish the marker to know about your program, e.g., how to compile it, how to run it etc.
+Then the file needs to be linked with the following command:
+	gcc -o timetable timetable.o
+
+Finally execute the file with the command:
+	./timetable
