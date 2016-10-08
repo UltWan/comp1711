@@ -1,10 +1,12 @@
 Assignment 2 README
 
-**Note**-The academic year has been used, running from September to June. The months of July-August have been omitted because it is assumed that the student will live at home instead of at university.
+Notes:
 
-	-The tuition fee of £9000 has been split into two payments of £4500, which is paid in September and February respectively.
+-The academic year has been used, running from September to June. The months of July and August have been omitted because it is assumed that the student will live at home instead of at university.
 
-	-Inflation increases the Cost of Rent, Food, Transport and Social at the beginning of each year.
+-The tuition fee of £9000 has been split into two payments of £4500, which is paid in September and February respectively.
+
+-Inflation increases the Cost of Rent, Food, Transport and Social at the beginning of each year.
 
 
 All work is in the degreeCost.c file, it can be opened and viewed in any text editor.
