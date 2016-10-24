@@ -2,7 +2,7 @@
 You should complete your assignment in here
 */
 
-// COMP 1711 Assignment 1
+// COMP 1711 Assignment 2
 // Ryan Wan, Wednesday 5th October 2016
 
 // Include the standard I/O library
