@@ -1,0 +1,6 @@
+Reads input but does not echo it
+Works with all characters but adds an extra figure
+Well structured
+Formatted and commented
+
+
