@@ -24,7 +24,9 @@ void printHexadecimal(int nBytes, unsigned char *data)
 		// Prints out a new line and counter, after 16 hexadecimals
 		if (count % 16 == 0)
 		{
+			// Prints new line
 			printf("\n");
+			// Prints counter
 			printf("%06x ", count);
 		}
 		// Prints out a space after 8 characters
@@ -50,7 +52,9 @@ void printDecimal(int nBytes, unsigned char *data)
 		// New line and counter after 8 decimals. Multiple by two for the to count normally
 		if (count % 8 == 0)
 		{
+			// Print new line
 			printf("\n");
+			// Prints counter
 			printf("%06x  ", count*2);
 		}
 		// Prints out decimals according to data
@@ -65,52 +69,42 @@ void printCharacter(int nBytes, unsigned char *data)
 	// New line
 	printf("\n");
 	// Main loop
-	for (count=0; count<(nBytes-2); count++)
+	do
 	{
-		// Loop for counter and hexidecimal
-		for (count1=0; count1<8; count1++)
+		// Loop to count and print counter and hexadecimals
+		for (count=0; count<8; count++)
 		{
-			// New counter after 8 hexidecimals
-			if (count1 % 8 == 0)
+			if (count % 8 == 0)
 			{
-				printf("%06x  ", count2);
+				// Print counter
+				printf("%06x ", count1);
 			}
-			// Prints 8 hexidecimals per line
-			if (count2<nBytes)
-			{
-				printf("%02x ", data[count2]);
-			}
-			// Prints spaces
-			else
-			{
-				printf(" ");
-			}
-			count2++;
+			// Print hexidecimals and add to counter
+			printf("%02x ", data[count1], count1++);
 		}
-		// Prints "|"
-		printf(" |");
-		// Loop for characters
-		for (count1=0; count1<8; count1++)
+		// Print "|"
+		printf("|");
+		//Loop to count and print characters
+		for (count=0; count<8; count++)
 		{
-			// Checks all characters are printable
-			if isprint(data[count3])
+			// Check if character is printable
+			if isprint(data[count2])
 			{
-				// Prints printable characters from data
-				printf("%c", data[count3]);
-
+				// Print if printable
+				printf("%c", data[count2]);
+				// Add one to counter
+				count2++;
 			}
+			// If character is not printable, then print "."
 			else 
 			{
-				// All other characters are displayed as "."
-				printf(".");
-
+			printf(".");
 			}
-			count3++;
-			
 		}
-		// Prints "|"
-		printf("|");
-		// New line
-		printf("\n");
+		// Print "|" and new line
+		printf("|\n");
 	}
-}			
+	while (count1<(nBytes-1));
+	// End of main loop
+}
+// End of program
