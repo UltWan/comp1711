@@ -1,0 +1,18 @@
+Makefile correctly set up:				2/2
+Code well structured:					1/2
+Code properly formatted and commented: 			4/4
+Code works correctly for hex output: 			3/4
+Code works correctly for decimal output: 		3/4
+Code works correctly for formatted character output: 	1/4
+
+This is not a bad effort.
+The hex and decimal outputs are good.
+However, note that the output omits the final byte.
+This is due to the for loop condition in line 22; change nBytes-1 to nBytes.
+A similar mistake is in the printDecimal() function.
+The main issues are in the second half of the source.
+The character output prints incorrect hex values -- see line 83. Here you use the varaible count1
+before it is initialised. A similar thing happens with count2; if you run the program in character 
+mode on your own source code print.c, you will see this clearly.
+Also, in line 83, you supply printf() with too many arguments.
+Otherwise, the formatting and commenting is very good.
