@@ -19,7 +19,7 @@ int count, count1, count2, count3;
 void printHexadecimal(int nBytes, unsigned char *data)
 {
 	// Overall counter for the for loop, minus null
-	for (count=0; count<nBytes-1; count++)
+	for (count=0; count<nBytes; count++)
 	{
 		// Prints out a new line and counter, after 16 hexadecimals
 		if (count % 16 == 0)
@@ -47,7 +47,7 @@ void printDecimal(int nBytes, unsigned char *data)
 	// Converts unsigned char to unsigned short
 	unsigned short *decimal = (unsigned short*) data;
 	// Overall counter for the loop. Minus null, divided by two because of typecast.
-	for (count=0; count<(nBytes-1)/2; count++)
+	for (count=0; count<(nBytes)/2; count++)
 	{
 		// New line and counter after 8 decimals. Multiple by two for the to count normally
 		if (count % 8 == 0)
@@ -79,8 +79,8 @@ void printCharacter(int nBytes, unsigned char *data)
 				// Print counter
 				printf("%06x ", count1);
 			}
-			// Print hexidecimals and add to counter
-			printf("%02x ", data[count1], count1++);
+			// Print hexidecimals and add to counter 
+			printf("%02x ", data[count1-1], count1++);
 		}
 		// Print "|"
 		printf("|");
@@ -95,16 +95,23 @@ void printCharacter(int nBytes, unsigned char *data)
 				// Add one to counter
 				count2++;
 			}
+			else if (data[count2]==0)
+			{
+			printf(" ");
+			count2++;
+			}
 			// If character is not printable, then print "."
-			else 
+			else
 			{
 			printf(".");
+			count2++;
 			}
+			
 		}
 		// Print "|" and new line
 		printf("|\n");
 	}
-	while (count1<(nBytes-1));
+	while (count1<(nBytes));
 	// End of main loop
 }
 // End of program
