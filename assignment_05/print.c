@@ -29,7 +29,7 @@ void printCharacter(int fileSize, char *charBuffer)
 				printf("%06x ", count1);
 			}
 			// Print hexidecimals and add to counter
-			printf("%02x ", charBuffer[count1-1]); count1++;
+			printf("%02x ", charBuffer[count1]); count1++;
 		}
 		// Print "|"
 		printf("|");
